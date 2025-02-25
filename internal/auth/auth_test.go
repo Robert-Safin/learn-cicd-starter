@@ -29,7 +29,7 @@ func TestGetAPIKey(t *testing.T) {
 			name:      "Malformed Authorization header",
 			setHeader: "Bearer abc123",
 			expectKey: "",
-			expectErr: nil,
+			expectErr: errors.New("malformed authorization header"),
 		},
 		{
 			name:      "Missing API key",
